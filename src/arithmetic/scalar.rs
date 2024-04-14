@@ -211,7 +211,7 @@ impl Scalar {
     }
 
     /// only last 32 bytes are used.
-    pub fn from_bytes_then_modq(bytes: &[u8]) -> Self {
+    pub fn from_bytes_mod_order(bytes: &[u8]) -> Self {
         let n = bytes.len();
         let (beg1, beg2): (usize, usize) = if n > 32 {
             (32, n - 32)
